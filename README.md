@@ -36,6 +36,8 @@ Rails.backtrace_cleaner.add_silencer { |line| line =~ /rvm/ }
 3. Set-up Guard and initialise to work with Rspec.
 Configured development environment to my own liking and comfort: I love Automations done with Guard, Backtrace silensor for refactoring code. Also I killed guard spring server via gitignore to avoid conflicts whilst commiting and deplotying. 
 
+4. 
+
 
 
 
