@@ -1,4 +1,25 @@
-1. Add minitest-reporters for Test Automation. 
+## Technical Requirements
+
+### 1. Ruby and Rails. 
+
+```ruby
+# My Ruby version; 
+ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
+# My Rails version;
+Rails 5.0.0.1
+# I use Version Control. Prefer Git than Subversion. 
+git version 2.6.4
+# Stuff you'll get out of the box are SQLite, most gems and their 
+# dependencies for a basic system functionality. 
+$ mkdir <your Dir>
+$ CD <your Dir>
+$ rails new <name of app>
+$ rails s 
+# Development platform created. :-)
+```
+
+
+### 2. Add minitest-reporters for Test Automation. 
 
 [gem]: https://rubygems.org/gems/minitest-reporters
 [travis]: https://travis-ci.org/kern/minitest-reporters
@@ -28,15 +49,30 @@ This will swap out the Minitest runner to the custom one used by minitest-report
 
 Don't like the default progress bar reporter?
 
-2. Activate Set-up Backtrace Silencer. 
+ Activate Set-up Backtrace Silencer. 
 ```ruby
 Rails.backtrace_cleaner.add_silencer { |line| line =~ /rvm/ }
 ```
 
-3. Set-up Guard and initialise to work with Rspec.
+ Set-up Guard and initialise to work with Rspec.
 Configured development environment to my own liking and comfort: I love Automations done with Guard, Backtrace silensor for refactoring code. Also I killed guard spring server via gitignore to avoid conflicts whilst commiting and deplotying. 
 
-4. 
+### 3. Bootsrap-sass
+
+[![Gem Version](https://badge.fury.io/rb/bootstrap-sass.svg)](http://badge.fury.io/rb/bootstrap-sass)
+[![npm version](https://img.shields.io/npm/v/bootstrap-sass.svg?style=flat)](https://www.npmjs.com/package/bootstrap-sass)
+[![Bower Version](https://badge.fury.io/bo/bootstrap-sass.svg)](http://badge.fury.io/bo/bootstrap-sass)
+[![Build Status](https://img.shields.io/travis/twbs/bootstrap-sass.svg)](https://travis-ci.org/twbs/bootstrap-sass)
+
+Dropped it in rails using asset pipeline.
+```ruby
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
+
+# Imported Bootstrap and it's sprockets in the application.scss
+@import "bootstrap-sprockets";
+@import "bootstrap";
+```
 
 
 
