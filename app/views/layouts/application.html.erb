@@ -6,9 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Script below is IE HTML shiv, de-facto way to display shit for losers who still use IE. OK, Moved shiv to partial and rendered. -->
+
+		<%= render 'layouts/shim' %>
+   
   </head>
 
   <body>
-    <%= yield %>
+  	<%= render 'layouts/header' %>
+
+  <div class="container">
+		<%= yield %>
+		<%= render 'layouts/footer' %>
+  </div>
+    
   </body>
 </html>
