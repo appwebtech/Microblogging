@@ -34,7 +34,7 @@ class UserTest < ActiveSupport::TestCase
 													first.last@foo.co.ke joe+sembi@jhu.edu]
 		valid_addresses.each do |valid_address|
 			@user.email = valid_address 
-			assert @user.valid?, "Address #{valid_address.inspect} should be valid"
+			assert @user.valid?, "#{valid_address.inspect} should be valid"
 		end
 	end
 
@@ -42,8 +42,15 @@ class UserTest < ActiveSupport::TestCase
 		invalid_addresses = %W[user@example,com user_at_foo.org user.name@example.
 														foo@bar_baz.com foo@bar+baz.com]
 		invalid_addresses.each do |invalid_address|
-		@user.email = invalid_address
+		@user.email = invalid_address, "#{invalid_address.inspect} should be valid"
 		assert_not @user.valid?
 		end
+	end
+
+	test "email address should be unique" do 
+		duplicate_user = @user.dup 
+		duplicate_user.email = @user.email.upcase
+		@user.save
+		assert_not duplicate_user.valid?
 	end
 end
