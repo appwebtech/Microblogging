@@ -15,9 +15,12 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 		assert flash.empty?
 	end
 
+
+
 	test "login with valid information" do 
 		get sessions_new_path
-		post sessions_create_path, session: { email: @user.email, password: "password" }
+		post sessions_create_path, params: { session: { email: @user.email, 
+																 password: "password" } }
 		assert_redirected_to @user 
 		follow_redirect!
 		assert_template 'users/show'
@@ -26,3 +29,5 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 		assert_select "a[href=?]", user_path(@user)
 	end
 end
+
+
