@@ -5,7 +5,7 @@ module SessionsHelper
 		session[:user_id] = user.id
 	end
 
-	# Remembers a user in a peristent session.
+	# Remembers a user in a persistent session.
 	def remember(user)
 		user.remember 
 	#	cookies[:user_id] = { value: user.id, expires: 20.years.from_now.utc } 
@@ -32,10 +32,20 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
-	#Logs out the current user.
+	# Forgets a persistent session.
+	def forget(user)
+		user.forget
+		cookies.delete(:user_id)
+		cookies.delete(:remember_token)
+	end
+
+	#Logged out current user
 
 	def log_out
+		forget(current_user)
 		session.delete(:user_id)
 		@current_user = nil
 	end
 end
+
+	
