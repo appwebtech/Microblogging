@@ -11,7 +11,7 @@ class User < ApplicationRecord
 # vpn home server but my Italian provider obfuscates my ports. Arrgghhhhhh! 
 # So just decided to generate a migration & code in an index in the record table.
 	has_secure_password
-	validates :password, length: { minimum: 6 }
+	validates :password, presence: true, length: { minimum: 6 }, allow_blank: true 
 
 	def User.digest(string)
 		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 
