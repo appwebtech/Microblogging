@@ -18,8 +18,8 @@ test "unsuccessful edit" do
     assert_template 'users/edit'
 
    test "successful edit" do
-   	logged_in_as(@user)
     get edit_user_path(@user)
+    log_in_as(@user)
     assert_template 'users/edit'
     name  = "Foo Bar"
     email = "foo@bar.com"
