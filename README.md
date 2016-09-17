@@ -89,7 +89,34 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
+### 6. will_paginate
 
+# will_paginate
+
+will_paginate is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel.
+
+Installation:
+
+``` ruby
+## Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.1.0'
+```
+
+See [installation instructions][install] on the wiki for more info.
+
+
+## Basic will_paginate use
+
+``` ruby
+## perform a paginated query:
+@posts = Post.paginate(:page => params[:page])
+
+# or, use an explicit "per page" limit:
+Post.paginate(:page => params[:page], :per_page => 30)
+
+## render page links in the view:
+<%= will_paginate @posts %>
+```
 
 
 
