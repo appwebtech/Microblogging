@@ -1,9 +1,10 @@
 # Sample users. (The bang after create will raise exceptions if it doesn't work.)
 
-User.create!(name: "Example User",
-						 email: "example@appwebtech.com",
+User.create!(name: "Joseph",
+						 email: "joseph@example.com",
 						 password:  						"foobar",
-						 password_confirmation: "foobar")
+						 password_confirmation: "foobar",
+						 admin: true)
 
 99.times do |n|
   name  = Faker::Name.name

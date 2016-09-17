@@ -7,3 +7,20 @@ kasyula:
   name: Kasyula Sembo
   email: kasyula@example.com
   password_digest: <%= User.digest('password') %>
+
+joseph:
+  name: Jupiter Cool
+  email: joseph@example.com
+  password_digest: <%= User.digest('password') %>
+
+kasyula:
+  name: Waddup app
+  email: kasyula@example.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "User #{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
