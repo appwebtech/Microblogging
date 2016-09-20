@@ -1,0 +1,12 @@
+      create  app/controllers/account_activations_controller.rb
+       route  get 'account_activations/ '
+      invoke  erb
+      create    app/views/account_activations
+      create    app/views/account_activations/ .html.erb
+      invoke  helper
+      create    app/helpers/account_activations_helper.rb
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/account_activations.coffee
+      invoke    scss
+      create      app/assets/stylesheets/account_activations.scss
