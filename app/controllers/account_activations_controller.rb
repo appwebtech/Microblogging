@@ -1,4 +1,7 @@
 class AccountActivationsController < ApplicationController
-  def  
-  end
+
+	def edit
+		
+	end
+ 
 end
