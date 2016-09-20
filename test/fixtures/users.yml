@@ -3,25 +3,35 @@ joseph:
   email: joseph@example.com
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 kasyula:
   name: Kasyula Sembo
   email: kasyula@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
-joseph:
+kavaka:
   name: Jupiter Cool
-  email: joseph@example.com
+  email: kavaka@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
-kasyula:
+mbumbuni:
   name: Waddup app
-  email: kasyula@example.com
+  email: mbumbuni@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>
   email: <%= "User #{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
