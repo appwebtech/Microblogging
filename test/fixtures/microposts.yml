@@ -25,4 +25,24 @@ micropost_<%= n %>:
   content: <%= Faker::Lorem.sentence(5) %>
   created_at: <%= 42.days.ago %>
   user: joseph
+
+ants:
+  content: "Oh, and Machakos is a beautiful city that lies south of Equator in Kenya!"
+  created_at: <%= 2.years.ago %>
+  user: archer
+
+zone:
+  content: "If the rings of Saturn are made of lost airline luggage, Etihad is pardoned by me!"
+  created_at: <%= 3.days.ago %>
+  user: archer
+
+tone:
+  content: "When I lose trust with someone I surely do lose TRUST. Thats how I got this far. :-)"
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+van:
+  content: "Hiyo ni storo noma!."
+  created_at: <%= 4.hours.ago %>
+  user: lana
 <% end %>
