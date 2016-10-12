@@ -89,7 +89,7 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-### 6. will_paginate
+### 6. Will_paginate
 
 # will_paginate
 
@@ -118,7 +118,119 @@ Post.paginate(:page => params[:page], :per_page => 30)
 <%= will_paginate @posts %>
 ```
 
+#### 7. MiniMagick
 
+# MiniMagick
+
+[![Build Status](https://travis-ci.org/minimagick/minimagick.svg?branch=master)](http://travis-ci.org/minimagick/minimagick)
+[![Code Climate](https://codeclimate.com/github/minimagick/minimagick/badges/gpa.svg)](https://codeclimate.com/github/minimagick/minimagick)
+
+A ruby wrapper for [ImageMagick](http://imagemagick.org/) or
+[GraphicsMagick](http://www.graphicsmagick.org/) command line.
+
+## Why?
+
+I was using [RMagick](https://github.com/rmagick/rmagick) and loving it, but it
+was eating up huge amounts of memory. Even a simple script would use over 100MB
+of RAM. On my local machine this wasn't a problem, but on my hosting server the
+ruby apps would crash because of their 100MB memory limit.
+
+## Solution!
+
+Using MiniMagick the ruby processes memory remains small (it spawns
+ImageMagick's command line program mogrify which takes up some memory as well,
+but is much smaller compared to RMagick). See [Thinking of switching from
+RMagick?](#thinking-of-switching-from-rmagick) below.
+
+MiniMagick gives you access to all the command line options ImageMagick has
+(found [here](http://www.imagemagick.org/script/command-line-options.php)).
+
+## Requirements
+
+ImageMagick or GraphicsMagick command-line tool has to be installed. You can
+check if you have it installed by running
+
+```sh
+$ convert -version
+Version: ImageMagick 6.8.9-7 Q16 x86_64 2014-09-11 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2014 ImageMagick Studio LLC
+Features: DPC Modules
+Delegates: bzlib fftw freetype jng jpeg lcms ltdl lzma png tiff xml zlib
+```
+
+### 8. CarrierWave
+
+# CarrierWave
+
+This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+It works well with Rack based web applications, such as Ruby on Rails.
+
+[![Build Status](https://travis-ci.org/carrierwaveuploader/carrierwave.svg?branch=master)](http://travis-ci.org/carrierwaveuploader/carrierwave)
+[![Code Climate](http://img.shields.io/codeclimate/github/carrierwaveuploader/carrierwave.svg)](https://codeclimate.com/github/carrierwaveuploader/carrierwave)
+[![git.legal](https://git.legal/projects/1363/badge.svg "Number of libraries approved")](https://git.legal/projects/1363)
+
+
+> ## carrierwave version disclaimer
+> ***This README is for a branch which is still in development.
+> Please switch to latest `0.x` branch for stable version.***
+
+
+## Information
+
+* RDoc documentation [available on RubyDoc.info](http://rubydoc.info/gems/carrierwave/frames)
+* Source code [available on GitHub](http://github.com/carrierwaveuploader/carrierwave)
+* More information, known limitations, and how-tos [available on the wiki](https://github.com/carrierwaveuploader/carrierwave/wiki) 
+
+### 9. Fog 
+
+![fog](http://geemus.s3.amazonaws.com/fog.png)
+
+fog is the Ruby cloud services library, top to bottom:
+
+* Collections provide a simplified interface, making clouds easier to work with and switch between.
+* Requests allow power users to get the most out of the features of each individual cloud.
+* Mocks make testing and integrating a breeze.
+
+[![Build Status](https://secure.travis-ci.org/fog/fog.svg?branch=master)](http://travis-ci.org/fog/fog)
+[![Dependency Status](https://gemnasium.com/fog/fog.svg)](https://gemnasium.com/fog/fog)
+[![Code Climate](https://codeclimate.com/github/fog/fog/badges/gpa.svg)](https://codeclimate.com/github/fog/fog)
+[![Gem Version](https://badge.fury.io/rb/fog.svg)](http://badge.fury.io/rb/fog)
+
+## Dependency Notice
+
+Currently all fog providers are getting separated into metagems to lower the
+load time and dependency count.
+
+If there's a metagem available for your cloud provider, e.g. `fog-aws`,
+you should be using it instead of requiring the full fog collection to avoid 
+unnecessary dependencies.
+
+'fog' should be required explicitly only if:  
+- The provider you use doesn't yet have a metagem available.
+- You require Ruby 1.9.3 support.
+
+## Getting Started
+
+Easy to install and invoke Amazon with an excellent compatibility with Rails 5. Haven't tried dependency injection whilst developing with both Angular Rails, but I reckon that wouldn't be an issue.
+
+```
+$ sudo gem install fog
+[...]
+
+$ fog
+
+  Welcome to fog interactive!
+  :default provides [...]
+
+>> server = Compute[:aws].servers.create
+ArgumentError: image_id is required for this operation
+
+>> server = Compute[:aws].servers.create(:image_id => 'ami-5ee70037')
+<Fog::AWS::EC2::Server [...]>
+
+>> server.destroy # cleanup after yourself or regret it, trust me
+true
+```
 
 
 
