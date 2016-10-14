@@ -83,7 +83,7 @@ class UserTest < ActiveSupport::TestCase
     joseph.unfollow(archer)
     assert_not joseph.following?(archer)
   end
-end
+
 
   test "associated microposts should be destroyed" do
     @user.save

@@ -53,6 +53,7 @@ private
 
   #Before filters
 
+=begin
   # Confirms a logged in user
   def logged_in_user
     unless logged_in?
@@ -60,6 +61,7 @@ private
       redirect_to users_new_path
     end
   end
+=end
 
     # Confirms the correct user.
   def correct_user
