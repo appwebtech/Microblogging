@@ -72,7 +72,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal mixed_case_email.downcase, @user.reload.email
   end
 
-<<<<<<< HEAD
+
     test "should follow and unfollow a user" do
     joseph = users(:joseph)
     archer  = users(:archer)
@@ -84,7 +84,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not joseph.following?(archer)
   end
 end
-=======
+
   test "associated microposts should be destroyed" do
     @user.save
     @user.microposts.create!(content: "Lorem ipsum")
@@ -93,4 +93,4 @@ end
   	end
 	end
 end
->>>>>>> user-microposts
+
