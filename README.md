@@ -1,11 +1,44 @@
 # A Ruby on Rails Social-Media Website App. 
 
-After the hype of [Responsive Web design](https://en.wikipedia.org/wiki/Responsive_web_design), many developers and designers have started automating their designs using [Behavior Driven Development (BDD) ](https://en.wikipedia.org/wiki/Behavior-driven_development) which is a much more advanced technique of [Test Driven Development (TDD). ](https://en.wikipedia.org/wiki/Test-driven_development). 
+## Synopsis of Software Development from Inception to Conclusion. 
+
+After the hype of [Responsive Web design](https://en.wikipedia.org/wiki/Responsive_web_design), many developers and designers have started automating their designs using [Behavior Driven Development (BDD) ](https://en.wikipedia.org/wiki/Behavior-driven_development) which is a much more advanced technique of [Test Driven Development (TDD) ](https://en.wikipedia.org/wiki/Test-driven_development). 
 
 I decided to automate each and every part of this application, from the routers HTTP Methods for [RESTful Services](https://en.wikipedia.org/wiki/Representational_state_transfer) to the behavior of the application when correct/incorrect data has been supplied. 
 
 My design was inspired by [Twitter](http://twitter.com) making it a Social Media Website App, where users can sign-up, create microposts, share with friends and follow/unfollow friends. 
 
+The Software Architecture and Implementation (Coding) has been purely done with [Ruby](https://www.ruby-lang.org/en/rails framework) the programming language and [Rails the Framework](http://rubyonrails.org/). 
+
+I wrote my Tests by running the necessary test commands via Bash/Terminal and automated them with Guard and Minitest. Even though the project is time consuming, it guarantees a bug free project with almost a zero Operation and Maintenance platform. 
+
+### Why Ruby on Rails?
+
+Ruby is an Object Oriented Programming Language and almost every code is an object. It's easy to code, share with other developers and de-bug across platforms like [GitHub](https://github.com/) and [BitBucket](https://bitbucket.org/). Printing "Hello World" would go like this in Ruby.
+
+```ruby
+puts "Hello World!"
+```
+
+While in Javascript it would be;
+
+```Javascript
+var x = "Hello";
+
+document.write(x + 'World!');  // If printing on browser 
+
+console.log(x + 'World!'); // If printing on JS console.
+
+alert(x + 'World!');  // Browser alert
+```
+
+As you can see, less code is written in Ruby and there are no complexities of thinking about variables, string literals and how to output them like in Javascript. 
+
+Ruby is compatible with Frameworks like Rails, Sinatra, Padrino, Cuba etc and employs the [Dont Repeat Yourself DRY](https://code.tutsplus.com/tutorials/3-key-software-principles-you-must-understand--net-25161) principle of coding.
+
+When you get the hang of Ruby and a Framework of your choice you become very productive and organised. Security can be enhanced using a one line of code, and Cross-site Scripting (XSS) are rare in Ruby Applications. 
+
+Been an Open-Source enthusiast, I can't help mentioning that Ruby is Open Source like Linux, etc. This is the future of Software Development. 
 
 # Technical Requirements
 
@@ -66,7 +99,59 @@ Rails.backtrace_cleaner.add_silencer { |line| line =~ /rvm/ }
  Set-up Guard and initialise to work with Rspec.
 Configured development environment to my own liking and comfort: I love Automations done with Guard, Backtrace silensor for refactoring code. Also I killed guard spring server via gitignore to avoid conflicts whilst commiting and deplotying. 
 
-## 3. Bootsrap-sass
+## 3. Guard (Automation)
+
+[![Gem Version](https://img.shields.io/gem/v/guard.svg?style=flat)](https://rubygems.org/gems/guard) [![Build Status](https://travis-ci.org/guard/guard.svg)](https://travis-ci.org/guard/guard) [![Dependency Status](https://gemnasium.com/guard/guard.svg)](https://gemnasium.com/guard/guard) [![Code Climate](https://codeclimate.com/github/guard/guard/badges/gpa.svg)](https://codeclimate.com/github/guard/guard) [![Test Coverage](https://codeclimate.com/github/guard/guard/badges/coverage.svg)](https://codeclimate.com/github/guard/guard) [![Inline docs](http://inch-ci.org/github/guard/guard.svg)](http://inch-ci.org/github/guard/guard)
+
+<img src="http://f.cl.ly/items/0A0M3W2x3I1P450z341U/guard-Icon.png" alt="Guard Icon" align="right" />
+Guard automates various tasks by running custom rules whenever file or directories are modified.
+
+It's frequently used by software developers, web designers, writers and other specialists to avoid mundane, repetitive actions and commands such as "relaunching" tools after changing source files or configurations.
+
+Common use cases include: an IDE replacement, web development tools, designing "smart" and "responsive" build systems/workflows, automating various project tasks and installing/monitoring various system services.
+
+For a full categorized list of known Guard plugins, look here: https://github.com/guard/guard/wiki/Guard-Plugins
+
+For more info:
+
+* [Guard Wiki](https://github.com/guard/guard/wiki)
+* [Google+ community](https://plus.google.com/communities/110022199336250745477).
+* [Google group](http://groups.google.com/group/guard-dev).
+* [StackOverflow](http://stackoverflow.com/questions/tagged/guard).
+* IRC channel `#guard` (irc.freenode.net) for chatting.
+
+Before you file an issue, make sure you have read the _[known issues](#issues)_ and _[file an issue](#file-an-issue)_ sections that contains some important information.
+
+### Features
+
+* File system changes handled by our awesome [Listen](https://github.com/guard/listen) gem.
+* Support for visual system notifications.
+* Huge eco-system with [more than 220](https://rubygems.org/search?query=guard-) Guard plugins.
+* Tested against Ruby 1.9.3, 2.0.0, 2.1.0, JRuby & Rubinius.
+
+### Screencast
+
+Two nice screencasts are available to help you get started:
+
+* [Guard](http://railscasts.com/episodes/264-guard) on RailsCast.
+* [Guard is Your Best Friend](http://net.tutsplus.com/tutorials/tools-and-tips/guard-is-your-best-friend) on Net Tuts+.
+
+Installation
+------------
+
+The simplest way to install Guard is to use [Bundler](http://bundler.io).
+
+Add Guard (and any other dependencies) to a `Gemfile` in your project’s root:
+
+```ruby
+group :development do
+  gem 'guard'
+end
+```
+
+then install it by running Bundler:
+
+## 4. Bootsrap-sass
 
 [![Gem Version](https://badge.fury.io/rb/bootstrap-sass.svg)](http://badge.fury.io/rb/bootstrap-sass)
 [![npm version](https://img.shields.io/npm/v/bootstrap-sass.svg?style=flat)](https://www.npmjs.com/package/bootstrap-sass)
@@ -83,7 +168,7 @@ gem 'sass-rails', '>= 3.2'
 @import "bootstrap";
 ```
 
-## 4. Bcrypt
+## 5. Bcrypt
 
 An easy way to keep your users' passwords secure.
 
@@ -106,7 +191,7 @@ was fixed in `>= 2.1.4`. If you used a vulnerable version to hash
 passwords with international characters in them, you will need to
 re-hash those passwords. This vulnerability only affected the JRuby gem.
 
-## 5. Faker
+## 6. Faker
 
 ### Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
 
@@ -119,7 +204,7 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-## 6. Will_paginate
+## 7. Will_paginate
 
 will_paginate is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel.
 
@@ -146,7 +231,7 @@ Post.paginate(:page => params[:page], :per_page => 30)
 <%= will_paginate @posts %>
 ```
 
-## 7. MiniMagick
+## 8. MiniMagick
 
 
 [![Build Status](https://travis-ci.org/minimagick/minimagick.svg?branch=master)](http://travis-ci.org/minimagick/minimagick)
@@ -185,7 +270,7 @@ Features: DPC Modules
 Delegates: bzlib fftw freetype jng jpeg lcms ltdl lzma png tiff xml zlib
 ```
 
-## 8. CarrierWave
+## 9. CarrierWave
 
 This gem provides a simple and extremely flexible way to upload files from Ruby applications.
 It works well with Rack based web applications, such as Ruby on Rails.
@@ -206,7 +291,7 @@ It works well with Rack based web applications, such as Ruby on Rails.
 * Source code [available on GitHub](http://github.com/carrierwaveuploader/carrierwave)
 * More information, known limitations, and how-tos [available on the wiki](https://github.com/carrierwaveuploader/carrierwave/wiki) 
 
-## 9. Fog 
+## 10. Fog 
 
 ![fog](http://geemus.s3.amazonaws.com/fog.png)
 
@@ -257,7 +342,7 @@ ArgumentError: image_id is required for this operation
 true
 ```
 
-## 10. Gems
+## 11. Gems
 
 The following table shows the gems I used for this project. Most of the default gems were updated with current versions via [Ruby Gems](https://rubygems.org/) whilst others worked well in their older versions. I grouped some of the gems from their default state to development test or production so as not to mix things up. 
 
@@ -292,9 +377,9 @@ The following table shows the gems I used for this project. Most of the default 
      `production`        | `pg`   | `0.18.4`
      `production`        | `PostgreSQL`   | `0.8.1`
 
-## 11. Deployment instructions
+## 12. Deployment instructions
 
-Deployment is straight forward in Ubuntu & Capistrano), Passenger, Git & Capistrano, Heroku, etc.
+Deployment is straight forward in Ubuntu & Capistrano, Passenger, Git & Capistrano, Heroku, etc.
 ```ruby
 # HEROKU: Used PostgreSQL for deployment and SQLite for development. 
 # Used Puma local webserver.
