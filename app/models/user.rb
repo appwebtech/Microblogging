@@ -94,6 +94,10 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
 
 	private
 
