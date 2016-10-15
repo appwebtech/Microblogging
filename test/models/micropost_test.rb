@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class MicropostTest < ActiveSupport::TestCase
+<<<<<<< HEAD
 
   def setup
     @user = users(:joseph)
@@ -31,3 +32,9 @@ class MicropostTest < ActiveSupport::TestCase
     assert_equal microposts(:most_recent), Micropost.first
   end
 end
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+end
+>>>>>>> following-users
