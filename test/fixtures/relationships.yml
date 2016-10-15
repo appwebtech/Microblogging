@@ -1,1 +1,15 @@
-# empty
+one:
+  follower: joseph
+  followed: glender
+
+two:
+  follower: joseph
+  followed: clemmie
+
+three:
+  follower: glender
+  followed: joseph
+
+four:
+  follower: bridget
+  followed: joseph# empty
