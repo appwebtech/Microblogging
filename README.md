@@ -1,6 +1,15 @@
-## Technical Requirements
+# A Ruby on Rails Social-Media Website App. 
 
-### 1. Ruby and Rails. 
+After the hype of [Responsive Web design](https://en.wikipedia.org/wiki/Responsive_web_design), many developers and designers have started automating their designs using [Behavior Driven Development (BDD) ](https://en.wikipedia.org/wiki/Behavior-driven_development) which is a much more advanced technique of [Test Driven Development (TDD). ](https://en.wikipedia.org/wiki/Test-driven_development). 
+
+I decided to automate each and every part of this application, from the routers HTTP Methods for [RESTful Services](https://en.wikipedia.org/wiki/Representational_state_transfer) to the behavior of the application when correct/incorrect data has been supplied. 
+
+My design was inspired by [Twitter](http://twitter.com) making it a Social Media Website App, where users can sign-up, create microposts, share with friends and follow/unfollow friends. 
+
+
+# Technical Requirements
+
+## 1. Ruby and Rails Environment. 
 
 ```ruby
 # My Ruby version; 
@@ -19,12 +28,12 @@ $ rails s
 ```
 
 
-### 2. Add minitest-reporters for Test Automation. 
+## 2. Minitest-reporters for Test Automation. 
 
 [gem]: https://rubygems.org/gems/minitest-reporters
 [travis]: https://travis-ci.org/kern/minitest-reporters
 
-# minitest-reporters - create customizable Minitest output formats
+### minitest-reporters - create customizable Minitest output formats
 
 [![Join the chat at https://gitter.im/kern/minitest-reporters](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kern/minitest-reporters?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Gem Version](https://badge.fury.io/rb/minitest-reporters.svg)][gem]
@@ -32,11 +41,11 @@ $ rails s
 
 Death to haphazard monkey-patching! Extend Minitest through simple hooks.
 
-## Installation ##
+### Installation
 
     gem install minitest-reporters
 
-## Usage ##
+### Usage
 
 In your `test_helper.rb` file, add the following lines:
 
@@ -57,7 +66,7 @@ Rails.backtrace_cleaner.add_silencer { |line| line =~ /rvm/ }
  Set-up Guard and initialise to work with Rspec.
 Configured development environment to my own liking and comfort: I love Automations done with Guard, Backtrace silensor for refactoring code. Also I killed guard spring server via gitignore to avoid conflicts whilst commiting and deplotying. 
 
-### 3. Bootsrap-sass
+## 3. Bootsrap-sass
 
 [![Gem Version](https://badge.fury.io/rb/bootstrap-sass.svg)](http://badge.fury.io/rb/bootstrap-sass)
 [![npm version](https://img.shields.io/npm/v/bootstrap-sass.svg?style=flat)](https://www.npmjs.com/package/bootstrap-sass)
@@ -74,11 +83,32 @@ gem 'sass-rails', '>= 3.2'
 @import "bootstrap";
 ```
 
-### 4. Bcrypt
+## 4. Bcrypt
 
-### 5. Faker
+An easy way to keep your users' passwords secure.
 
-# Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
+[![Build Status](https://travis-ci.org/codahale/bcrypt-ruby.png?branch=master)](https://travis-ci.org/codahale/bcrypt-ruby)
+
+### Why you should use `bcrypt()`
+
+If you store user passwords in the clear, then an attacker who steals a copy of your database has a giant list of emails
+and passwords. Some of your users will only have one password -- for their email account, for their banking account, for
+your application. A simple hack could escalate into massive identity theft.
+
+It's your responsibility as a web developer to make your web application secure -- blaming your users for not being
+security experts is not a professional response to risk.
+
+`bcrypt()` allows you to easily harden your application against these kinds of attacks.
+
+*Note*: JRuby versions of the bcrypt gem `<= 2.1.3` had a [security
+vulnerability](http://www.mindrot.org/files/jBCrypt/internat.adv) that
+was fixed in `>= 2.1.4`. If you used a vulnerable version to hash
+passwords with international characters in them, you will need to
+re-hash those passwords. This vulnerability only affected the JRuby gem.
+
+## 5. Faker
+
+### Faker [![Build Status](https://travis-ci.org/stympy/faker.svg?branch=master)](https://travis-ci.org/stympy/faker) [![Gem Version](https://badge.fury.io/rb/faker.svg)](https://badge.fury.io/rb/faker)
 
 
 This gem is a port of Perl's Data::Faker library that generates fake data.
@@ -89,9 +119,7 @@ for the creation of this gem), having real-looking test data, and having your
 database populated with more than one or two records while you're doing
 development.
 
-### 6. Will_paginate
-
-# will_paginate
+## 6. Will_paginate
 
 will_paginate is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel.
 
@@ -105,7 +133,7 @@ gem 'will_paginate', '~> 3.1.0'
 See [installation instructions][install] on the wiki for more info.
 
 
-## Basic will_paginate use
+### Basic will_paginate use
 
 ``` ruby
 ## perform a paginated query:
@@ -118,9 +146,8 @@ Post.paginate(:page => params[:page], :per_page => 30)
 <%= will_paginate @posts %>
 ```
 
-#### 7. MiniMagick
+## 7. MiniMagick
 
-# MiniMagick
 
 [![Build Status](https://travis-ci.org/minimagick/minimagick.svg?branch=master)](http://travis-ci.org/minimagick/minimagick)
 [![Code Climate](https://codeclimate.com/github/minimagick/minimagick/badges/gpa.svg)](https://codeclimate.com/github/minimagick/minimagick)
@@ -128,14 +155,14 @@ Post.paginate(:page => params[:page], :per_page => 30)
 A ruby wrapper for [ImageMagick](http://imagemagick.org/) or
 [GraphicsMagick](http://www.graphicsmagick.org/) command line.
 
-## Why?
+### Why?
 
 I was using [RMagick](https://github.com/rmagick/rmagick) and loving it, but it
 was eating up huge amounts of memory. Even a simple script would use over 100MB
 of RAM. On my local machine this wasn't a problem, but on my hosting server the
 ruby apps would crash because of their 100MB memory limit.
 
-## Solution!
+### Solution!
 
 Using MiniMagick the ruby processes memory remains small (it spawns
 ImageMagick's command line program mogrify which takes up some memory as well,
@@ -145,7 +172,7 @@ RMagick?](#thinking-of-switching-from-rmagick) below.
 MiniMagick gives you access to all the command line options ImageMagick has
 (found [here](http://www.imagemagick.org/script/command-line-options.php)).
 
-## Requirements
+### Requirements
 
 ImageMagick or GraphicsMagick command-line tool has to be installed. You can
 check if you have it installed by running
@@ -158,9 +185,7 @@ Features: DPC Modules
 Delegates: bzlib fftw freetype jng jpeg lcms ltdl lzma png tiff xml zlib
 ```
 
-### 8. CarrierWave
-
-# CarrierWave
+## 8. CarrierWave
 
 This gem provides a simple and extremely flexible way to upload files from Ruby applications.
 It works well with Rack based web applications, such as Ruby on Rails.
@@ -170,18 +195,18 @@ It works well with Rack based web applications, such as Ruby on Rails.
 [![git.legal](https://git.legal/projects/1363/badge.svg "Number of libraries approved")](https://git.legal/projects/1363)
 
 
-> ## carrierwave version disclaimer
+> ### carrierwave version disclaimer
 > ***This README is for a branch which is still in development.
 > Please switch to latest `0.x` branch for stable version.***
 
 
-## Information
+### Information
 
 * RDoc documentation [available on RubyDoc.info](http://rubydoc.info/gems/carrierwave/frames)
 * Source code [available on GitHub](http://github.com/carrierwaveuploader/carrierwave)
 * More information, known limitations, and how-tos [available on the wiki](https://github.com/carrierwaveuploader/carrierwave/wiki) 
 
-### 9. Fog 
+## 9. Fog 
 
 ![fog](http://geemus.s3.amazonaws.com/fog.png)
 
@@ -196,7 +221,7 @@ fog is the Ruby cloud services library, top to bottom:
 [![Code Climate](https://codeclimate.com/github/fog/fog/badges/gpa.svg)](https://codeclimate.com/github/fog/fog)
 [![Gem Version](https://badge.fury.io/rb/fog.svg)](http://badge.fury.io/rb/fog)
 
-## Dependency Notice
+### Dependency Notice
 
 Currently all fog providers are getting separated into metagems to lower the
 load time and dependency count.
@@ -209,7 +234,7 @@ unnecessary dependencies.
 - The provider you use doesn't yet have a metagem available.
 - You require Ruby 1.9.3 support.
 
-## Getting Started
+### Getting Started
 
 Easy to install and invoke Amazon with an excellent compatibility with Rails 5. Haven't tried dependency injection whilst developing with both Angular Rails, but I reckon that wouldn't be an issue.
 
@@ -232,5 +257,78 @@ ArgumentError: image_id is required for this operation
 true
 ```
 
+## 10. Gems
 
+The following table shows the gems I used for this project. Most of the default gems were updated with current versions via [Ruby Gems](https://rubygems.org/) whilst others worked well in their older versions. I grouped some of the gems from their default state to development test or production so as not to mix things up. 
+
+
+     Group       | Gemfile              | Version Type
+     --------------- |:-------------------------------------|:--------------------
+     `default`       | `'rails'`            | `5.0.0.1`
+     `default`        | `puma`                | `3.4.0`
+     `default`         | `bootstrap-sass`    | `~> 3.3.6` 
+     `default`           | `sass-rails`       | `>= 3.2` 
+     `default`           | `bcrypt`          | `~> 3.1', '>= 3.1.11` 
+     `default`      | `faker`               | `~> 1.6', '>= 1.6.6`
+     `default`        | `carrierwave`          | `~> 0.11.2`
+     `default`          | `mini_magick`         | `~> 4.5', '>= 4.5.1`
+     `default`          | `fog`                 | `~> 1.38`
+     `default`          | `will_paginate`   | `~> 3.1` 
+     `default`        | `uglifier`          | `3.0.0` 
+     `default`       | `coffee-rails`       | `4.2.1`
+     `default`         | `jquery-rails`     | `4.1.1`
+     `default`       | `turbolinks`        | `5.0.1`
+     `default`         | `jbuilder`      | `2.4.1`
+     `development`     | `sqlite3`          | `1.3.11`
+     `development`     | `byebug`           | `9.0.0`
+     `development`          | `web-console`    | `3.1.1`
+     `development`        | `listen`   |    `3.0.8`
+     `development`         | `spring`     | `1.7.2`
+     `development`       | `spring-watcher-listen`  | `0.1.1`
+     `test`     | `rails-controller-testing`      | `2.4.1`
+     `test`     | `minitest-reporters`          | `1.1.9`
+     `test`     | `guard`           | `2.13.0`
+     `test`     | `guard-minitest`    | `2.4.4`
+     `production`        | `pg`   | `0.18.4`
+     `production`        | `PostgreSQL`   | `0.8.1`
+
+## 11. Deployment instructions
+
+Deployment is straight forward in Ubuntu & Capistrano), Passenger, Git & Capistrano, Heroku, etc.
+```ruby
+# HEROKU: Used PostgreSQL for deployment and SQLite for development. 
+# Used Puma local webserver.
+
+# GIT & Capistrano: Version Control and Push to a remote repo.
+# git remote add origin git@github.com:username/your-repo-name.git  {Using SSH}
+
+# {Using HTTP}
+# Capistrano;
+group :development do
+    gem 'capistrano'
+end
+
+$ bundle install 
+
+# Install, then capify the app.
+```
+
+
+## Developer
+
+Development done by;
+
+Joseph M Mwania. 
+## Contacts
+
+
+http://www.theappwebtech.com/
+
+https://twitter.com/appwebtech
+
+https://www.facebook.com/theappwebtech/
+
+## License
+
+MIT License. Copyright 2016 Appwebtech. http://theappwebtech.com
 
