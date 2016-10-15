@@ -1,6 +1,5 @@
 class Micropost < ApplicationRecord
   belongs_to :user
-<<<<<<< HEAD
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
@@ -16,6 +15,4 @@ class Micropost < ApplicationRecord
       end
     end
 end
-=======
-end
->>>>>>> following-users
+

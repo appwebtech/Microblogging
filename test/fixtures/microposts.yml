@@ -1,6 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-<<<<<<< HEAD
 orange:
   content: "I just ate an orange!"
   created_at: <%= 10.minutes.ago %>
@@ -47,7 +45,7 @@ van:
   created_at: <%= 4.hours.ago %>
   user: lana
 <% end %>
-=======
+
 one:
   content: MyText
   user: one
@@ -55,4 +53,4 @@ one:
 two:
   content: MyText
   user: two
->>>>>>> following-users
+
