@@ -136,8 +136,8 @@ Two nice screencasts are available to help you get started:
 * [Guard](http://railscasts.com/episodes/264-guard) on RailsCast.
 * [Guard is Your Best Friend](http://net.tutsplus.com/tutorials/tools-and-tips/guard-is-your-best-friend) on Net Tuts+.
 
-Installation
-------------
+### Installation
+
 
 The simplest way to install Guard is to use [Bundler](http://bundler.io).
 
