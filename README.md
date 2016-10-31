@@ -409,9 +409,13 @@ Joseph M Mwania.
 
 http://www.theappwebtech.com/
 
+https://github.com/appwebtech
+
 https://twitter.com/appwebtech
 
 https://www.facebook.com/theappwebtech/
+
+https://it.pinterest.com/appwebtech/
 
 ## License
 
