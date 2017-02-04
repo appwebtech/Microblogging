@@ -1,6 +1,6 @@
 # A Ruby on Rails Social-Media Website App. 
 
-## Synopsis of Software Development from Inception to Conclusion. 
+## Software Development Documentation. 
 
 After the hype of [Responsive Web design](https://en.wikipedia.org/wiki/Responsive_web_design), many developers and designers have started automating their designs using [Behavior Driven Development (BDD) ](https://en.wikipedia.org/wiki/Behavior-driven_development) which is a much more advanced technique of [Test Driven Development (TDD) ](https://en.wikipedia.org/wiki/Test-driven_development). 
 
@@ -40,7 +40,7 @@ When you get the hang of Ruby and a Framework of your choice you become very pro
 
 Been an Open-Source enthusiast, I can't help mentioning that Ruby is Open Source like Linux, etc. This is the future of Software Development. 
 
-# Technical Requirements
+# Software Engineering Technologies
 
 ## 1. Ruby and Rails Environment. 
 
