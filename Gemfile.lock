@@ -250,7 +250,11 @@ GEM
     multi_json (1.12.1)
     nenv (0.3.0)
     nio4r (1.2.1)
+
+ 
+
     nokogiri (1.13.10)
+
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     notiffany (0.1.1)
@@ -263,7 +267,11 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.12.6)
+
+   
+
     racc (1.6.1)
+
     rack (2.2.3)
     rack-test (0.6.3)
       rack (>= 1.0)
