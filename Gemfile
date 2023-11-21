@@ -12,7 +12,7 @@ gem 'fog', '~> 1.38'
 gem 'will_paginate', '~> 3.1'
 gem 'uglifier',     '3.0.0'
 gem 'coffee-rails', '4.2.1'
-gem 'jquery-rails', '4.1.1'
+gem 'jquery-rails', '4.4.0'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
 
